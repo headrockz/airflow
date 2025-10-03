@@ -5,7 +5,7 @@ End-to-end data pipeline using Apache Airflow, dbt, and PostgreSQL for data tran
 ## Tech Stack
 
 - **[Apache Airflow](https://airflow.apache.org/)** - Workflow orchestration
-- **[dbt](https://www.getdbt.com/)** - Data transformation  
+- **[dbt](https://www.getdbt.com/)** - Data transformation
 - **[Astronomer Cosmos](https://docs.astronomer.io/learn/airflow-dbt)** - dbt integration for Airflow
 - **[PostgreSQL](https://www.postgresql.org/)** - Database
 
@@ -19,6 +19,8 @@ airflow/
 │   │   ├── seeds/          # Static CSV data
 │   │   ├── macros/         # Reusable dbt functions
 │   │   └── tests/          # Data quality tests
+│   ├── modules/            # DAG utility modules
+│   │   └── *.py            # files utility
 │   └── *.py                # DAG files
 ├── includes/               # Additional modules
 ├── plugins/                # Airflow plugins
@@ -76,5 +78,3 @@ pytest tests/test_yaml.py -v
 The project includes a dynamic DAG generator that creates Airflow DAGs from YAML configuration files, eliminating repetitive Python code.
 
 See detailed documentation: [Dynamic Generator README](includes/dynamic_generator/README.md)
-
-

@@ -36,7 +36,7 @@ dbt run --select models/trusted/dolar/   # By folder
 dbt test --select tb_pokemon_types       # Specific test
 ```
 
-## Modelos
+## Models
 
 - **Trusted**: Clean data from sources (pokemon, moves, dollar/ibov)
 - **Gold**: Analysis and metrics (correlations, volatility, aggregations)
