@@ -1,0 +1,11 @@
+version: 2
+
+macros:
+  - name: extract_date_parts
+    description: This macro extracts useful components from a date column to simplify time-based analysis.
+    docs:
+        show: true
+    arguments:
+      - name: date_column
+        type: string
+        description: The date column from which to extract components.

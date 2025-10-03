@@ -1,0 +1,14 @@
+checks for pokemons:
+  - failed rows:
+      name: Check the number of pokemons
+      samples limit: 2
+      fail condition: id not between 1 and 152
+      warn: when = 152
+      fail: when > 152
+
+  - failed rows:
+      name: Check types pokemons
+      fail query: |
+        SELECT type_1
+        FROM pokemons
+        where type_1 not in ('Bug','Dragon','Electric','Fighting','Fire','Ghost','Grass','Ground','Ice','Normal','Poison','Psychic','Rock','Water')

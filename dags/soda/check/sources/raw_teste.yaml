@@ -1,0 +1,6 @@
+checks for my_teste:
+  - schema:
+      fail:
+        when required column missing: [name]
+        when wrong column type:
+          name: integer

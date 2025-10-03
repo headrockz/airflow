@@ -1,0 +1,14 @@
+checks for pokemons:
+  - schema:
+      fail:
+        when required column missing: [id, type_1, type_2, name, description, weight, height, mega_evolves, evolves]
+        when wrong column type:
+          id: integer
+          type_1: text
+          type_2: text
+          name: text
+          description: text
+          weight: double precision
+          height: integer
+          mega_evolves: boolean
+          evolves: integer

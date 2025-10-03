@@ -1,0 +1,4 @@
+models:
+  - name: obt_pm_types
+    description: Union pokemons types and moves types
+    columns: []

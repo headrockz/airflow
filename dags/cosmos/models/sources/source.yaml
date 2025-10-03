@@ -1,0 +1,21 @@
+# version: 2
+
+# sources:
+#   - name: pokedex
+#     database: pokedex
+#     schema: raw
+#     tables:
+#       - name: pokemons
+#         description: The main table containing Pokémon data.
+#         docs:
+#           show: true
+#         enabled: true
+#         columns:
+#           - name: type_1
+#             description: The primary type of the Pokémon.
+#             tests:
+#               - accepted_values:
+#                   values: ['Bug','Dragon','Electric','Fighting','Fire','Ghost','Grass','Ground','Ice','Normal','Poison','Psychic','Rock','Water']
+#               - not_null
+#       - name: moves
+#       - name: moves_pokemons

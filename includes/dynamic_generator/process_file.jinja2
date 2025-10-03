@@ -1,0 +1,48 @@
+
+from datetime import datetime, timedelta
+from airflow import DAG
+{% if imports%}
+{{imports}}
+{% endif %}
+
+DEFAULT_DAG_ARGS = {
+    'owner': 'Asafe',
+    'depends_on_past': False,
+    'start_date': datetime(2025, 1, 1),
+    'email_on_failure': False,
+    'email_on_retry': False,
+    'retries': 1,
+    'retry_delay': timedelta(minutes=5),
+    'catchup': False,
+}
+
+
+with DAG(
+        dag_id="{{dag_id}}",
+        description="{{description}}",
+        {% if schedule_interval != "None" %}
+        schedule_interval="{{schedule_interval}}",
+        {% else %}
+        schedule_interval={{schedule_interval}},
+        {% endif %}
+        default_args=DEFAULT_DAG_ARGS,
+        tags={{tags}},
+    ):   
+    {% for task in tasks %}
+    {% if task.type == 'bash' %}
+    {{task.task_id}} = BashOperator(
+        task_id="{{task.task_id}}",
+        bash_command="{{task.bash_command}}",
+    )
+    {% elif task.type == 'python' %}
+    {{task.task_id}} = PythonOperator(
+        task_id="{{task.task_id}}",
+        python_callable={{task.python_callable}},
+        {% if task.op_kwargs %}op_kwargs={{task.op_kwargs}},{% endif %}
+    )
+    {% endif %}  
+    {% endfor %}  
+    {% for dependency in dependencies %}
+    # Definindo dependências
+    {{dependency.upstream}} >> {{dependency.downstream}}
+    {% endfor %}

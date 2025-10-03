@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: tb_moves_types
+    description: The table containing Pokémon move types.
+    tags: ['pokemons']
+    meta:
+      contains_pii: false
+      owner: "@asafe"
+      model_maturity: prd
+    columns:
+      - name: id
+        description: Unique identifier for the Pokémon move type.
+        tests:
+          - not_null
+          - unique
+      - name: type
+        description: The type of the Pokémon move.
+      - name: power
+        description: The power of the Pokémon move.
+      - name: accuracy 
+        description: The accuracy of the Pokémon move.

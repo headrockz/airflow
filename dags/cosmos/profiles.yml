@@ -1,0 +1,33 @@
+cosmos:
+  outputs:
+    prd:
+      type: postgres
+      threads: 2
+      host: "{{ env_var('POSTGRES_HOST') }}" #Host do postgres
+      port: 5432
+      user: "{{ env_var('POSTGRES_USER') }}"
+      pass: "{{ env_var('POSTGRES_PASSWORD') }}"
+      dbname: pokedex
+      schema: raw #Schema onde o resultados dos modelos serão salvos
+
+    ods:
+      type: postgres
+      threads: 2
+      host: "{{ env_var('POSTGRES_HOST') }}" #Host do postgres
+      port: 5432
+      user: "{{ env_var('POSTGRES_USER') }}"
+      pass: "{{ env_var('POSTGRES_PASSWORD') }}"
+      dbname: pokedex
+      schema: ods 
+
+    dev:
+      type: postgres
+      threads: 2
+      host: "{{ env_var('POSTGRES_HOST') }}" #Host do postgres
+      port: 5432
+      user: "{{ env_var('POSTGRES_USER') }}"
+      pass: "{{ env_var('POSTGRES_PASSWORD') }}"
+      dbname: pokedex
+      schema: dev 
+
+  target: prd

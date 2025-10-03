@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: obt_monthly_ibov_dolar_correlation
+    description: The table containing the correlation between the dollar and Ibov.
+    config:
+      group: finance
+    columns:
+      - name: year
+        description: Represents the year.
+      - name: month_name
+        description: Represents the full name of the month (e.g., "January", "February").
+      - name: correlation_ibov_dolar
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: -1
+              max_value: 0.5
+              inclusive: true
+              description: The correlation value between the dollar and Ibov should be between -1 and 0.5.
+        description: Represents the correlation value between the dollar and Ibov.

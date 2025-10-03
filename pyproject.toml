@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "airflow"
+version = "0.1.0"
+description = ""
+authors = ["Asafe Felipe"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">3.10 < 3.13"
+soda-core = "^3.1.3"
+soda-core-bigquery = "^3.1.3"
+soda-core-postgres = "^3.1.3"
+dbt-core = "^1.7.5"
+pandas = "^2.2.0"
+astronomer-cosmos = "^1.3.1"
+dbt-postgres = "^1.7.5"
+dbt-bigquery = "^1.7.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+flake8 = "^7.0.0"
+isort = "^5.13.2"
+yamllint = "^1.35.1"
+bandit = "^1.7.8"
+pre-commit = "^3.7.1"
+commitizen = "^3.27.0"
+pytz = "^2024.1"
+sqlfluff = "^3.2.5"
+jinja2 = "^3.1.6"
+pyyaml = "^6.0.3"
+pytest = "^8.4.2"
+pytest-cov = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

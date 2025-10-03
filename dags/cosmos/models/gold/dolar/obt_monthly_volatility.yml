@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: obt_monthly_volatility
+    description: The table containing the monthly volatility of the dollar and Ibov.
+    columns:
+      - name: year
+        description: Represents the year.
+      - name: month
+        description: Represents the month.
+      - name: month_name
+        description: Represents the full name of the month (e.g., "January", "February").
+      - name: volatility_ibov
+        description: Represents the volatility of the IBOV index for the month.
+      - name: volatility_dolar
+        description: Represents the volatility of the dollar for the month.

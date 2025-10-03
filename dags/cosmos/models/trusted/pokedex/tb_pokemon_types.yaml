@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: tb_pokemon_types
+    description: The table containing Pokémon.
+    meta:
+      contains_pii: true
+      owner: "asafe"
+      team: "data engineering"
+      xpto: asafe
+    columns:
+      - name: id
+        description: Unique identifier for the Pokémon type.
+        tests:
+          - not_null
+          - unique
+      - name: type_1
+        tests:
+          - accepted_values:
+              values: ['Bug','Dragon','Electric','Fighting','Fire','Ghost','Grass','Ground','Ice','Normal','Poison','Psychic','Rock','Water']
+          - not_null
+        description: Primary type of the Pokémon.
+      - name: type_2
+        description: Secondary type of the Pokémon, if applicable.
+      - name: name
+        meta:
+          contains_pii: true
+        description: Name of the Pokémon.
+      - name: description
+        description: Description of the Pokémon
+      - name: weight
+        description: Weight of the Pokémon.
+      - name: height
+        description: Height of the Pokémon.
+      - name: mega_evolves
+        description: Indicates if the Pokémon can mega evolve.
+      - name: evolves
+        description: Indicates if the Pokémon can evolve.

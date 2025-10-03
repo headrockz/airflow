@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: obt_oscillations
+    description: The table containing the oscillations of the dollar and Ibov.    
+    columns:
+      - name: date_day
+        description: Represents the specific date.
+      - name: close_ibov
+        description: Represents the closing value of the IBOV index.
+      - name: prev_close_ibov
+        description: Represents the previous closing value of the IBOV index.
+      - name: oscillation_ibov
+        description: Represents the oscillation value of the IBOV index.
+      - name: close_dolar
+        description: Represents the closing value of the dollar.
+      - name: prev_close_dolar
+        description: Represents the previous closing value of the dollar.
+      - name: oscillation_dolar
+        description: Represents the oscillation value of the dollar.
+

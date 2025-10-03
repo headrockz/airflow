@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: time
+    description: Time dimension table. This table is used in dimensional data models to provide temporal context to the facts stored in the database. The dim_time table contains detailed information about dates, allowing data analysis over time from various perspectives such as day, week, month and year.
+    columns:
+      - name: date_day
+        description: Represents the specific date.
+      - name: prior_date_day
+        description: Represents the date of the previous day.
+      - name: next_date_day
+        description: Represents the date of the next day.
+      - name: prior_year
+        description: Represents the date corresponding to the same day of the previous year.
+      - name: weekday
+        description: Represents the day of the week as a number (usually from 1 to 7, where 1 may represent Sunday and 7 may represent Saturday).
+      - name: weekday_name
+        description: Represents the full name of the day of the week (e.g., "Monday", "Tuesday").
+      - name: weekday_short_name
+        description: Represents the abbreviated form of the name of the day of the week (e.g., "Mon", "Tue").
+      - name: month_day
+        description: Represents the day of the month (from 1 to 31).
+      - name: year_day
+        description: Represents the day of the year (from 1 to 365 or 366).
+      - name: week_start_date
+        description: Represents the start date of the week.
+      - name: week_end_date
+        description: Represents the end date of the week.
+      - name: year_week
+        description: Represents the week of the year (usually from 1 to 52 or 53).
+      - name: year_month
+        description: Represents the month of the year as a number (from 1 to 12).
+      - name: month_name
+        description: Represents the full name of the month (e.g., "January", "February").
+      - name: month_short_name
+        description: Represents the abbreviated form of the name of the month (e.g., "Jan", "Feb").
+      - name: month_start_date
+        description: Represents the start date of the month.
+      - name: month_end_date
+        description: Represents the end date of the month.
+      - name: year
+        description: Represents the year.
+      - name: year_start_date
+        description: Represents the start date of the year.
+      - name: year_end_date
+        description: Represents the end date of the year.

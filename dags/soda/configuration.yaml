@@ -1,0 +1,18 @@
+data_source pokedex:
+  type: postgres
+  host: ${POSTGRES_HOST}
+  port: "5432"
+  username: ${POSTGRES_USER}
+  password: ${POSTGRES_PASSWORD}
+  database: pokedex
+  schema: public
+
+data_source bq:
+  type: bigquery
+  account_info_json_path: ${PATH_BQ}
+  auth_scopes:
+  - https://www.googleapis.com/auth/bigquery
+  - https://www.googleapis.com/auth/cloud-platform
+  - https://www.googleapis.com/auth/drive
+  project_id: ${GCP_PROJECT_ID}
+  dataset: teste

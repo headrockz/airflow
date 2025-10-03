@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: tb_dolar_ibov
+    description: The table containing the dollar and IBOV data.
+    config:
+      group: finance
+    columns:
+      - name: date_day
+        description: Represents the specific date.
+        tests:
+          - not_null
+          - unique
+      - name: year
+        description: Represents the year.
+      - name: month_name
+        description: Represents the full name of the month (e.g., "January", "February").
+      - name: weekday_name
+        description: Represents the full name of the day of the week (e.g., "Monday", "Tuesday"). 
+      - name: year_start_date
+        description: Represents the start date of the year.
+      - name: year_end_date
+        description: Represents the end date of the year.
+      - name: close_ibov
+        description: Represents the closing value of the IBOV index.
+      - name: close_dolar
+        description: Represents the closing value of the dollar.

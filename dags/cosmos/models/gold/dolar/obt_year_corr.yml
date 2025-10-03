@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: obt_year_corr
+    description: The table containing the correlation between the dollar and Ibov.
+    columns:
+      - name: year
+        description: Represents the year.
+      - name: corr
+        description: Represents the correlation value between the dollar and Ibov.
+

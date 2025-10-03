@@ -1,0 +1,15 @@
+dag_id: "dag_z_simple_bash"
+description: "DAG simples com uma tarefa bash gerada dinamicamente"
+schedule_interval: "@daily"
+imports: |
+  from airflow.operators.bash import BashOperator
+tags:
+  - "dynamic"
+  - "bash"
+  - "simple"
+
+tasks:
+  - task_id: "hello_world"
+    type: "bash"
+    bash_command: "echo 'Hello World from Dynamic DAG!'"
+

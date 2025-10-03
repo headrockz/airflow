@@ -1,0 +1,13 @@
+groups:
+  - name: finance
+    owner:
+      # 'name' or 'email' is required; additional properties allowed
+      email: finance@admin.com
+      slack: finance-data
+      github: finance-data-team
+  - name: training
+    owner:
+      # 'name' or 'email' is required; additional properties allowed
+      email: training@admin.com
+      slack: training-data
+      github: training-data-team

@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: obt_divergence
+    description: The table containing the divergence between the dollar and Ibov.
+    columns:
+      - name: date_day
+        description: Represents the specific date.
+      - name: oscillation_ibov
+        description: Represents the oscillation value of the IBOV index.
+      - name: oscillation_dolar
+        description: Represents the oscillation value of the dollar.
+      - name: has_divergence
+        description: Represents the divergence value between the dollar and Ibov.
